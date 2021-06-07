@@ -10,7 +10,7 @@ import {auth} from './firebase/firebase.utils'
 class App extends React.Component {
   constructor(){
     super()
-    this.state = {
+    this.stat = {
       currentUser: null
     }
   }
@@ -33,7 +33,7 @@ class App extends React.Component {
  
   return (
     <div >
-      <Header currentUser={this.state.currentUser}/>
+      <Header/>
       <Switch>
       <Route exact path='/' component={HomePage}/>
       <Route path='/shop' component={ShopPage}/>

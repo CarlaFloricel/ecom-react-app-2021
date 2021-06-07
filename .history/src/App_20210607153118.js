@@ -10,30 +10,22 @@ import {auth} from './firebase/firebase.utils'
 class App extends React.Component {
   constructor(){
     super()
-    this.state = {
+    this.stat = {
       currentUser: null
     }
   }
 
-  unsubscribeFromAuth = null
-
-  componentDidMount() {
-    auth.onAuthStateChanged(user => {
-      this.setState({currentUser: user})
-      console.log(user)
-    })
-  }
-
-
-  componentWillUnmount() {
-    this.unsubscribeFromAuth()
-  }
-
+componentDidMount() {
+  auth.onAuthStateChanged(user => {
+    this.setState({currentUser: user})
+    console.log(user)
+  })
+}
   render(){
  
   return (
     <div >
-      <Header currentUser={this.state.currentUser}/>
+      <Header/>
       <Switch>
       <Route exact path='/' component={HomePage}/>
       <Route path='/shop' component={ShopPage}/>

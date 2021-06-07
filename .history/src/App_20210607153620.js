@@ -10,7 +10,7 @@ import {auth} from './firebase/firebase.utils'
 class App extends React.Component {
   constructor(){
     super()
-    this.state = {
+    this.stat = {
       currentUser: null
     }
   }
