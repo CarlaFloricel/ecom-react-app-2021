@@ -13,7 +13,7 @@ const CartIcon = ({toggleCartHidden, itemCount}) => (
 </div>
 )
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = ({ cart:{cartItems} }) => ({
     itemCount: selectCartItemsCount(state)
 })
 
